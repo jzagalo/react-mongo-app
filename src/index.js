@@ -3,11 +3,17 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import { Provider } from "react-redux";
+import { createStore } from "redux";
+import article from './reducers/article';
+import PublishingApp from './layouts/PublishingApp';
+
+const store = createStore(article);
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Provider store={store}>
+    <PublishingApp />
+  </Provider>,
   document.getElementById('root')
 );
 
