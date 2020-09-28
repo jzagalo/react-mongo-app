@@ -20,4 +20,4 @@ const article = (state = articleMock, action) => {
     }
 }
 
-export default article;
+module.exports = article;

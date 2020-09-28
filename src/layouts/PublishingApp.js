@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
-import falcorModel from '../falcorModel';
 import { bindActionCreators } from 'redux';
 import articleActions from "../actions/article";
-//import article from '../reducers/article';
+import falcorModel from '../falcorModel';
 
 const mapStateToProps = (state) => ({
     ...state
@@ -27,7 +26,7 @@ class PublishingApp extends Component {
                 .then((length)  => length);
 
         const articles = await falcorModel
-                .get([ 'articles', { from: 0, to: articlesLength -1 },
+                .get([ 'articles', { from: 0, to: articlesLength - 1 },
                     ['id', 'articleTitle', 'articleContent']])
                 .then((articleResponse) => articleResponse.json.articles);
 

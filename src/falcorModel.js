@@ -1,7 +1,7 @@
 import falcor from 'falcor';
-//import FalcorDataSource from 'falcor-http-datasource';
+import FalcorDataSource from 'falcor-http-datasource';
 
-let cache = {
+/*let cache = {
     articles: [
         {
             id: 987654,
@@ -15,9 +15,9 @@ let cache = {
         }
    ]
 };
-
-const model = new falcor.Model({
-    'cache': cache
+*/
+var model = new falcor.Model({
+    source: new FalcorDataSource('/model.json')
 });
 
 export default model;
