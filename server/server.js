@@ -64,10 +64,8 @@ var model = new falcor.Model({
 });
 
 app.use('/model.json', falcorExpress.dataSourceRoute((req, res) => {
-    return model.asDataSource();
+    return new falcorRouter(routes);
 }));
-
-
 
 app.server.listen(8080, function(){
     console.log(`Started on port ${app.server.address().port}`);

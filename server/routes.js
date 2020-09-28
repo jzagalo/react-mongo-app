@@ -4,7 +4,7 @@ var sessionRoutes = require('./routeSession');
 var Article = configMongoose.Article;
 
 const PublishingAppRoutes = [{
-    ...sessionRoutes,
+   // ...sessionRoutes,
     route: 'articles.length',
     get: () => {
         const articlesCountInDB = 2 // hardcoded for example
